@@ -53,6 +53,16 @@ class _CharactersListPageState extends State<CharactersListPage> {
 
     Future<Map<String, dynamic>> futureTable = fetchAllData();
     return Scaffold(
+        appBar: AppBar(
+          actions: [
+            IconButton(onPressed: () {}, icon: const Icon(Icons.person))
+          ],
+          backgroundColor: const Color.fromARGB(255, 45, 45, 45),
+          title: const Text(
+            'My characters',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ),
         backgroundColor: Colors.black,
         body: FutureBuilder<Map<String, dynamic>>(
             future: futureTable,
@@ -116,7 +126,20 @@ class _CharactersListPageState extends State<CharactersListPage> {
                                   onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Character()),
+                                        builder: (context) => Character(
+                                              id: widget.id,
+                                              index: i,
+                                              color: current,
+                                              name: result,
+                                              image:
+                                                  'https://enka.network/ui/${snapshot.data!['characterData'][snapshot.data!['tableData']['avatarInfoList'][i]['avatarId'].toString()]["SideIconName"]}.png',
+                                              element: snapshot
+                                                      .data!['characterData'][
+                                                  snapshot.data!['tableData']
+                                                          ['avatarInfoList'][i]
+                                                          ['avatarId']
+                                                      .toString()]["Element"],
+                                            )),
                                   ),
                                   leading: CircleAvatar(
                                       backgroundColor: current,
@@ -129,7 +152,7 @@ class _CharactersListPageState extends State<CharactersListPage> {
                                     style: TextStyle(
                                         color: current,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 12),
+                                        fontSize: 17),
                                   ),
                                   subtitle: Text(
                                     'Level ${snapshot.data!['tableData']['playerInfo']['showAvatarInfoList'][i]['level']}',
@@ -138,11 +161,16 @@ class _CharactersListPageState extends State<CharactersListPage> {
                                         fontWeight: FontWeight.bold,
                                         fontSize: 12),
                                   ),
-                                  // trailing: Text('few', style: TextStyle(
-                                  //       color: current,
-                                  //       fontWeight: FontWeight.bold,
-                                  //       fontSize: 12),
-                                  // ),
+                                  trailing: Text(
+                                    snapshot.data!['characterData'][snapshot
+                                        .data!['tableData']['avatarInfoList'][i]
+                                            ['avatarId']
+                                        .toString()]["Element"],
+                                    style: TextStyle(
+                                        color: current,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12),
+                                  ),
                                 ))));
                   },
                 );
