@@ -48,7 +48,7 @@ class _CharacterPageState extends State<CharacterPage> {
                       child: Container(
                         width: double.maxFinite,
                         height: 300,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: NetworkImage(
                                     'https://enka.network/ui/UI_Costume_MonaCostumeWic.png'),
@@ -72,9 +72,9 @@ class _CharacterPageState extends State<CharacterPage> {
                         padding:
                             const EdgeInsets.only(left: 20, right: 20, top: 30),
                         width: MediaQuery.of(context).size.width,
-                        height: 500,
+                        height: MediaQuery.of(context).size.height,
                         decoration: const BoxDecoration(
-                            color: Colors.grey,
+                            color: Color.fromARGB(255, 45, 45, 45),
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(30),
                                 topRight: Radius.circular(30))),
@@ -94,7 +94,7 @@ class _CharacterPageState extends State<CharacterPage> {
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(
               color: Colors.black,
             ),
