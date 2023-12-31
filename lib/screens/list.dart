@@ -6,6 +6,7 @@ import 'package:enkanetwork/screens/character.dart';
 import 'package:flutter/material.dart';
 
 import '../api/api.dart';
+import '../constants/constants.dart';
 
 class CharactersList extends StatelessWidget {
   const CharactersList({super.key, required this.id});
@@ -82,33 +83,10 @@ class _CharactersListPageState extends State<CharactersListPage> {
                             .data!['tableData']['avatarInfoList'][i]['avatarId']
                             .toString()]["SideIconName"]
                         .substring(lastUnderscore + 1);
-                    Color current = snapshot.data!['characterData']
-                                    [snapshot.data!['tableData']['avatarInfoList'][i]['avatarId'].toString()]
-                                ["Element"] ==
-                            "Electric"
-                        ? Colors.purple
-                        : snapshot.data!['characterData']
-                                        [snapshot.data!['tableData']['avatarInfoList'][i]['avatarId'].toString()]
-                                    ["Element"] ==
-                                "Ice"
-                            ? Colors.lightBlue
-                            : snapshot.data!['characterData']
-                                            [snapshot.data!['tableData']['avatarInfoList'][i]['avatarId'].toString()]
-                                        ["Element"] ==
-                                    "Wind"
-                                ? Colors.lightGreen
-                                : snapshot.data!['characterData']
-                                                [snapshot.data!['tableData']['avatarInfoList'][i]['avatarId'].toString()]
-                                            ["Element"] ==
-                                        "Water"
-                                    ? Colors.blue
-                                    : snapshot.data!['characterData'][snapshot.data!['tableData']['avatarInfoList'][i]['avatarId'].toString()]["Element"] == "Fire"
-                                        ? Colors.deepOrange
-                                        : snapshot.data!['characterData'][snapshot.data!['tableData']['avatarInfoList'][i]['avatarId'].toString()]["Element"] == "Rock"
-                                            ? Colors.yellow
-                                            : snapshot.data!['characterData'][snapshot.data!['tableData']['avatarInfoList'][i]['avatarId'].toString()]["Element"] == "Grass"
-                                                ? Colors.green
-                                                : Colors.black;
+                    final mainPropId = snapshot.data!['characterData'][snapshot
+                        .data!['tableData']['avatarInfoList'][i]['avatarId']
+                        .toString()]["Element"];
+                    final current = getColor(mainPropId);
                     return Padding(
                         padding: const EdgeInsets.only(top: 20),
                         child: Container(

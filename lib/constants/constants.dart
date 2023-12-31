@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 String getPropName(String propId) {
   const propNames = {
     'FIGHT_PROP_HP': 'Flat HP',
@@ -21,4 +23,17 @@ String getPropName(String propId) {
     'FIGHT_PROP_GRASS_ADD_HURT': 'Dendro DMG Bonus',
   };
   return propNames[propId] ?? '';
+}
+
+Color getColor(String propId) {
+  const propNames = {
+    'Ice': Colors.lightBlue,
+    'Electric': Colors.purple,
+    'Wind': Colors.lightGreen,
+    'Water': Colors.blue,
+    'Fire': Colors.deepOrange,
+    'Rock': Colors.yellow,
+    'Grass': Colors.green,
+  };
+  return propNames[propId] ?? Colors.white;
 }
