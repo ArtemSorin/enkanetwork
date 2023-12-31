@@ -70,9 +70,19 @@ class _CharacterPageState extends State<CharacterPage> {
         future: futureTable,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
+            final mainPropId0 = snapshot.data!['avatarInfoList'][widget.index]
+                ['equipList'][snapshot
+                    .data!['avatarInfoList'][widget.index]['equipList'].length -
+                1]['flat']['weaponStats'][0]['appendPropId'];
+            final mainPropId1 = snapshot.data!['avatarInfoList'][widget.index]
+                ['equipList'][snapshot
+                    .data!['avatarInfoList'][widget.index]['equipList'].length -
+                1]['flat']['weaponStats'][1]['appendPropId'];
+            final propName0 = getPropName(mainPropId0);
+            final propName1 = getPropName(mainPropId1);
             return Scaffold(
               backgroundColor: Colors.black,
-              body: Container(
+              body: SizedBox(
                 width: double.maxFinite,
                 height: double.maxFinite,
                 child: Stack(children: [
@@ -128,11 +138,89 @@ class _CharacterPageState extends State<CharacterPage> {
                               ),
                             ],
                           ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 12),
+                            child: Card(
+                                color: Colors.black,
+                                child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        right: 5, left: 5),
+                                    child: SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        height: 150,
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 12),
+                                              child: Column(
+                                                children: [
+                                                  SizedBox(
+                                                    height: 90,
+                                                    width: 90,
+                                                    child: Image.network(
+                                                        'https://enka.network/ui/${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['flat']['icon']}.png'),
+                                                  ),
+                                                  Text(
+                                                    '$propName0: ${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['flat']['weaponStats'][0]['statValue']}',
+                                                    style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 9),
+                                                  ),
+                                                  Text(
+                                                    '$propName1: ${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['flat']['weaponStats'][1]['statValue']}',
+                                                    style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 9),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 12, left: 12),
+                                              child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Weapon Level: ${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['weapon']['level']}',
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 9),
+                                                    ),
+                                                    Text(
+                                                      'Weapon Ascension Level: ${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['weapon']['promoteLevel']}',
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 9),
+                                                    ),
+                                                  ]),
+                                            )
+                                          ],
+                                        )))),
+                          ),
                           SizedBox(
-                            height: 260,
+                            height: 220,
                             child: ListView.builder(
-                              padding: const EdgeInsets.all(12),
-                              itemCount: 5,
+                              padding:
+                                  const EdgeInsets.only(right: 12, top: 12),
+                              itemCount: snapshot
+                                      .data!['avatarInfoList'][widget.index]
+                                          ['equipList']
+                                      .length -
+                                  1,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, i) {
                                 final mainPropId = snapshot
@@ -146,7 +234,7 @@ class _CharacterPageState extends State<CharacterPage> {
                                       padding: const EdgeInsets.only(
                                           right: 5, left: 5),
                                       child: SizedBox(
-                                          width: 120,
+                                          width: 130,
                                           height: 200,
                                           child: Column(
                                             children: [

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 String getPropName(String propId) {
   const propNames = {
+    'FIGHT_PROP_BASE_ATTACK': 'Base ATK',
     'FIGHT_PROP_HP': 'Flat HP',
     'FIGHT_PROP_ATTACK': 'Flat ATK',
     'FIGHT_PROP_DEFENSE': 'Flat DEF',
