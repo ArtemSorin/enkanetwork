@@ -38,3 +38,17 @@ Color getColor(String propId) {
   };
   return propNames[propId] ?? Colors.white;
 }
+
+String getServer(String propId) {
+  const propNames = {
+    '0': 'внутри miHoYo',
+    '1': 'Материковый Китай',
+    '2': 'Материковый Китай',
+    '5': 'Материковый Китай (каналы bilibili или Xiaomi)',
+    '6': 'Америка',
+    '7': 'Европа и Африка',
+    '8': 'Азия и Австралия',
+    '9': 'Тайвань, Гонконг и Макао',
+  };
+  return propNames[propId] ?? '';
+}
