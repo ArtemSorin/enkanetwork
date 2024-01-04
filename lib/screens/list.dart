@@ -72,7 +72,8 @@ class _CharactersListPageState extends State<CharactersListPage> {
                 return ListView.builder(
                   padding: const EdgeInsets.all(12),
                   itemCount:
-                      snapshot.data!['tableData']['avatarInfoList']!.length,
+                      snapshot.data!['tableData']['avatarInfoList']!.length ??
+                          0,
                   itemBuilder: (context, i) {
                     int lastUnderscore = snapshot.data!['characterData'][
                             snapshot.data!['tableData']['avatarInfoList'][i]

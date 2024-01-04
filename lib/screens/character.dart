@@ -148,7 +148,7 @@ class _CharacterPageState extends State<CharacterPage> {
                                     child: SizedBox(
                                         width:
                                             MediaQuery.of(context).size.width,
-                                        height: 150,
+                                        height: 120,
                                         child: Row(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
@@ -164,22 +164,6 @@ class _CharacterPageState extends State<CharacterPage> {
                                                     child: Image.network(
                                                         'https://enka.network/ui/${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['flat']['icon']}.png'),
                                                   ),
-                                                  Text(
-                                                    '$propName0: ${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['flat']['weaponStats'][0]['statValue']}',
-                                                    style: const TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontSize: 9),
-                                                  ),
-                                                  Text(
-                                                    '$propName1: ${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['flat']['weaponStats'][1]['statValue']}',
-                                                    style: const TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontSize: 9),
-                                                  ),
                                                 ],
                                               ),
                                             ),
@@ -190,6 +174,22 @@ class _CharacterPageState extends State<CharacterPage> {
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
+                                                    Text(
+                                                      '$propName0: ${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['flat']['weaponStats'][0]['statValue']}',
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 9),
+                                                    ),
+                                                    Text(
+                                                      '$propName1: ${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['flat']['weaponStats'][1]['statValue']}',
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 9),
+                                                    ),
                                                     Text(
                                                       'Weapon Level: ${snapshot.data!['avatarInfoList'][widget.index]['equipList'][snapshot.data!['avatarInfoList'][widget.index]['equipList'].length - 1]['weapon']['level']}',
                                                       style: const TextStyle(
