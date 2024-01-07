@@ -136,7 +136,17 @@ class _MyHomePageState extends State<MyHomePage> {
                           title: Text('UID: ${snapshot.data![i]['title']}'),
                           subtitle:
                               Text('Server: ${snapshot.data![i]['server']}'),
-                          trailing: const Icon(Icons.arrow_forward_ios),
+                          trailing: IconButton(
+                            icon: Icon(
+                              Icons.delete,
+                              color: lightBlue,
+                            ),
+                            onPressed: () {
+                              FavoriteDatabase.instance
+                                  .deleteFavorite(id: snapshot.data![i]['id']);
+                              refreshFavorites();
+                            },
+                          ),
                         ),
                       );
                     },

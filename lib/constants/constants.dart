@@ -28,12 +28,12 @@ String getPropName(String propId) {
 
 Color getColor(String propId) {
   const propNames = {
-    'Ice': Colors.lightBlue,
+    'Ice': Color.fromARGB(255, 94, 195, 242),
     'Electric': Colors.purple,
     'Wind': Colors.lightGreen,
     'Water': Colors.blue,
     'Fire': Colors.deepOrange,
-    'Rock': Colors.yellow,
+    'Rock': Color.fromARGB(255, 163, 150, 32),
     'Grass': Colors.green,
   };
   return propNames[propId] ?? Colors.white;
@@ -41,14 +41,14 @@ Color getColor(String propId) {
 
 String getServer(String propId) {
   const propNames = {
-    '0': 'внутри miHoYo',
-    '1': 'Материковый Китай',
-    '2': 'Материковый Китай',
-    '5': 'Материковый Китай (каналы bilibili или Xiaomi)',
-    '6': 'Америка',
-    '7': 'Европа и Африка',
-    '8': 'Азия и Австралия',
-    '9': 'Тайвань, Гонконг и Макао',
+    '0': 'inside the miHoYo',
+    '1': 'Mainland China',
+    '2': 'Mainland China',
+    '5': 'Mainland China (channels bilibili or Xiaomi)',
+    '6': 'America',
+    '7': 'Europe and Africa',
+    '8': 'Asia and Australia',
+    '9': 'Taiwan, Hong Kong and Macau',
   };
   return propNames[propId] ?? '';
 }
