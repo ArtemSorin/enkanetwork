@@ -1,16 +1,6 @@
 # enkanetwork
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| ![Screenshot_1706203115](https://github.com/ArtemSorin/enkanetwork/assets/95878097/a8c573cf-f90a-43de-b059-c64014506667) | ![Screenshot_1706203149](https://github.com/ArtemSorin/enkanetwork/assets/95878097/a1906501-b739-498d-9118-6cd26fb384ff) | ![Screenshot_1706203197](https://github.com/ArtemSorin/enkanetwork/assets/95878097/5abbdfc0-711f-499c-999e-b15ea5785429) |
+| ------- | -------- | -------- |
